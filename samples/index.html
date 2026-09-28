@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>サンプルを見る｜かんたんホームページ工房</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --page-bg: #faf9f5;
+      --ink: #273b31;
+      --muted: #516875;
+      --accent: #b94e18;
+      --tile-w: 210px;
+      --tile-h: 296px;
+      --gap: 18px;
+      --font-display: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+      --font-body: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--page-bg);
+      color: var(--ink);
+      font-family: var(--font-body);
+      line-height: 1.75;
+    }
+    .lane-wrap {
+      margin: 1.25rem 1.25rem 0;
+      border-radius: 1rem;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(248, 246, 242, 0.9)),
+        #f3f1ec;
+      border: 1px solid rgba(20, 28, 36, 0.07);
+      overflow: hidden;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+    .lane {
+      overflow: hidden;
+      padding: 1rem 0 1.15rem;
+    }
+    .track {
+      display: flex;
+      width: max-content;
+      animation: flow 110s linear infinite;
+    }
+    .set {
+      display: flex;
+      gap: var(--gap);
+      padding-right: var(--gap);
+    }
+    .tile {
+      flex: 0 0 auto;
+      width: var(--tile-w);
+      height: var(--tile-h);
+      border-radius: 0.45rem;
+      background: #fff;
+      border: 1px solid rgba(20, 28, 36, 0.14);
+      box-shadow: 0 6px 16px rgba(20, 28, 36, 0.08);
+      overflow: hidden;
+      position: relative;
+    }
+    .tile img {
+      display: block;
+      width: 100%;
+      height: auto;
+      pointer-events: none;
+    }
+    .tile span {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+      padding: 0.2rem 0.45rem;
+      font-size: 0.68rem;
+      line-height: 1.25;
+      background: rgba(255, 255, 255, 0.94);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .below {
+      width: min(40rem, calc(100% - 2.5rem));
+      margin: 2.4rem auto 3rem;
+      text-align: center;
+    }
+    .below p {
+      margin: 0 0 1.4rem;
+      font-size: 1rem;
+    }
+    .below strong { font-weight: 700; }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.75rem 1.25rem;
+    }
+    .actions a:last-child { margin-left: auto; }
+    .below a {
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      text-underline-offset: 0.28em;
+    }
+    @keyframes flow {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .track { animation: none; }
+    }
+    @media (max-width: 720px) {
+      :root { --tile-w: 160px; --tile-h: 226px; }
+      .lane-wrap { margin-inline: 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="lane-wrap">
+    <div class="lane" aria-label="流れているサンプル">
+      <div class="track" id="track"></div>
+    </div>
+  </div>
+  <div class="below">
+    <p>ページ全体をご覧になりたい方は、<strong>かんたんホームページ工房のサンプル</strong>を見るから、<br>全てご覧になることができますので、そちらをご確認ください。</p>
+    <div class="actions">
+      <a href="../index.html#works">特設サイトに戻る</a>
+      <a href="https://butti0108-spec.github.io/portfolio/sample-1man/index.html">かんたんホームページ工房を開く</a>
+    </div>
+  </div>
+  <script>
+    var samples = [
+      ["01-cafe-warm-a", "木漏れ日カフェ"],
+      ["02-cafe-split-b", "花便り 店先"],
+      ["03-cafe-mix-ink-c", "グラスサイド"],
+      ["04-salon-clinic-a", "白磁ヘアサロン"],
+      ["05-salon-sakura-b", "パステル菓子工房 うすい"],
+      ["06-bakery-brick-a", "レンガ窯パン 麦の窓"],
+      ["07-bakery-cafe-c", "丼の湯気 麺場"],
+      ["08-bar-ink-b", "客室宿 ひなた畳"],
+      ["09-bar-brick-a", "光のヨガスタジオ あさひ"],
+      ["10-clinic-green-a", "提灯の居酒屋 赤のれん"],
+      ["11-clinic-clinic-b", "ひなたまち診療所"],
+      ["12-florist-sakura-a", "おさんぽペットケア みずき"],
+      ["13-florist-green-c", "グリーンデスク コワーキング"],
+      ["14-ramen-brick-b", "壁のギャラリー 余白"],
+      ["15-ramen-ink-a", "朝焼パン ひかり屋"],
+      ["16-yoga-green-a", "花綴りサロン"],
+      ["17-yoga-sakura-b", "灯ボトルバー"],
+      ["18-studio-clinic-c", "余白フォトスタジオ"],
+      ["19-studio-ink-a", "暖簾ラーメン 麦火"],
+      ["20-pet-cafe-b", "砂糖屋パルフェ"],
+      ["21-pet-sakura-a", "窓辺の緑カフェ"],
+      ["22-cowork-clinic-b", "木暖簾 いまい"],
+      ["23-cowork-green-a", "共席ラボ"],
+      ["24-sweets-sakura-c", "青葉クリニック"],
+      ["25-sweets-cafe-a", "麦畑ベーカリー"],
+      ["26-izakaya-brick-c", "墨白フォト"],
+      ["27-izakaya-ink-b", "朝露の宿"],
+      ["28-gallery-ink-a", "葉音ヨガスタジオ"],
+      ["29-gallery-clinic-c", "束ね花店"],
+      ["30-hotel-cafe-b", "額縁ギャラリー灯"]
+    ];
+    var track = document.getElementById("track");
+    function setOf(hidden) {
+      var set = document.createElement("div");
+      set.className = "set";
+      if (hidden) set.setAttribute("aria-hidden", "true");
+      samples.forEach(function (row) {
+        var tile = document.createElement("div");
+        tile.className = "tile";
+        var img = document.createElement("img");
+        img.src = "previews/" + row[0] + ".png";
+        img.alt = hidden ? "" : row[1];
+        var label = document.createElement("span");
+        label.textContent = row[1];
+        tile.appendChild(img);
+        tile.appendChild(label);
+        set.appendChild(tile);
+      });
+      return set;
+    }
+    track.appendChild(setOf(false));
+    track.appendChild(setOf(true));
+  </script>
+</body>
+</html>

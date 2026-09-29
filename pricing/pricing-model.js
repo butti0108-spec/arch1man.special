@@ -17,9 +17,9 @@
     }
     if (state.custom === 'partial') { total += 22000; notes.push('一部カスタマイズは22,000円〜です。内容により金額が変わります。'); }
     if (state.custom === 'full') notes.push('全体の独自構成は個別見積もりです。その費用は上の金額に含まれていません。');
-    if (state.wp) { total += 55000; notes.push('WordPress対応は55,000円〜です。追加機能・プラグインは別途見積もりです。'); }
+    if (state.wp) { total += 55000; notes.push('WordPress対応は55,000円〜です。別途サーバー実費が必要です。追加機能・プラグインは別途見積もりです。'); }
     if (state.support === 'online') { total += 11000; notes.push('オンラインサポートは1回・最大3時間。超過は30分ごとに1,100円追加です。'); }
-    if (state.support === 'visit') notes.push('訪問サポート55,000円には基本プランを含みます。訪問先による追加料金は別途です。');
+    if (state.support === 'visit') notes.push('訪問サポートは55,000円〜です。基本プランを含みます。訪問先による追加料金は別途です。');
     return { total, notes };
   }
   const model = { initial, update, calculate };

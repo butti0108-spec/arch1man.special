@@ -25,6 +25,14 @@
       --font-body: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
     }
     *, *::before, *::after { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
     body {
       margin: 0;
       background: var(--page-bg);
@@ -305,8 +313,8 @@
       <a class="logo" href="#top">かんたんホームページ工房</a>
       <nav class="site-nav" aria-label="ページ内">
         <a href="#about">よくある疑問</a>
-        <a href="#works">次にできること</a>
-        <a href="#contact">まだ、買わなくて大丈夫です。</a>
+        <a href="#works">できること</a>
+        <a href="#cta">無料で試す</a>
       </nav>
     </div>
   </header>
@@ -388,7 +396,7 @@
 
     <section class="section works" id="works">
       <div class="shell">
-        <p class="section-label">次にできること</p>
+        <p class="section-label">できること</p>
         <h2>気になるところから、どうぞ。</h2>
         <p class="section-lead">流れを見る、料金を見る、サンプルを見る。</p>
         <p class="section-lead">気になる項目を選ぶと、詳しいページが開きます。</p>

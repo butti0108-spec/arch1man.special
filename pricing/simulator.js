@@ -13,8 +13,18 @@
       input.checked = input.dataset.key === 'wp' ? state.wp === (input.value === 'yes') : state[input.dataset.key] === input.value;
     });
     const result = model.calculate(state);
-    const amount = result.total.toLocaleString('ja-JP');
-    total.textContent = amount;
+    const n = Math.round(result.total);
+    const head = n >= 10000 && n % 10000 === 0
+      ? (n / 10000) + '万'
+      : n > 10000
+        ? Math.floor(n / 10000) + '万' + (n % 10000)
+        : String(n);
+    const amount = n >= 10000 && n % 10000 === 0
+      ? (n / 10000) + '万円'
+      : n > 10000
+        ? Math.floor(n / 10000) + '万' + (n % 10000) + '円'
+        : n + '円';
+    total.textContent = head;
     flags.replaceChildren();
     result.notes.forEach(note => {
       const item = document.createElement('li');
@@ -22,7 +32,7 @@
       flags.append(item);
     });
     flags.hidden = result.notes.length === 0;
-    if (announce) status.textContent = `最低見積もり金額：${amount}円（税込）。${result.notes.join('')}`;
+    if (announce) status.textContent = `最低見積もり金額：${amount}（税込）。${result.notes.join('')}`;
   }
   controls.forEach(input => input.addEventListener('change', () => {
     const key = input.dataset.key;

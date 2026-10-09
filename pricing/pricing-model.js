@@ -11,7 +11,7 @@
     let total = state.support === 'visit' ? 50000 : 10000;
     const notes = [];
     if (state.domain === 'own') {
-      notes.push('独自ドメインの接続料金は無料です。向き先の設定はお客様が行います。設定方法が分からないときは、画面共有サポート（30分1,500円）を利用できます。');
+      notes.push('独自ドメインの接続料金は無料です。やり方が分からなければ、画面共有サポート（30分1,500円）を利用できます。');
     }
     if (state.custom === 'partial') {
       total += 20000;

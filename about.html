@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>事業者情報｜かんたんホームページ工房</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --page-bg: #faf9f5;
+      --body-ink: #273b31;
+      --body-muted: #516875;
+      --chrome-bg: #365846;
+      --chrome-ink: #ffffff;
+      --accent: #b94e18;
+      --card-bg: #ffffff;
+      --shell: 76rem;
+      --gutter: clamp(1.25rem, 5vw, 2.5rem);
+      --font-display: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+      --font-body: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+    body {
+      margin: 0;
+      background: var(--page-bg);
+      color: var(--body-ink);
+      font-family: var(--font-body);
+      line-height: 1.7;
+    }
+    a { color: inherit; }
+    .shell {
+      width: min(100% - var(--gutter) * 2, var(--shell));
+      margin-inline: auto;
+    }
+    .site-header {
+      background: var(--chrome-bg);
+      color: var(--chrome-ink);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 3.75rem;
+      flex-wrap: wrap;
+      padding: 0.6rem 0;
+    }
+    .logo {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      color: var(--chrome-ink);
+    }
+    .site-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      justify-content: flex-end;
+    }
+    .site-nav a {
+      color: var(--chrome-ink);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .section { padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(2rem, 5vw, 3rem); }
+    .section-label {
+      margin: 0 0 0.5rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+    }
+    .section h1 {
+      margin: 0 0 0.85rem;
+      font-weight: 700;
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      line-height: 1.35;
+    }
+    .section h1::after {
+      content: "";
+      display: block;
+      width: 50%;
+      max-width: 100%;
+      height: 3px;
+      margin: 0.55rem 0 0;
+      background: var(--accent);
+    }
+    .section-lead { margin: 0 0 2rem; color: var(--body-muted); }
+    .info-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(17, 17, 17, 0.12);
+      border-radius: 0.6rem;
+      padding: 0.5rem 1.35rem;
+      max-width: 44rem;
+    }
+    .info-list { margin: 0; }
+    .info-row {
+      display: flex;
+      gap: 1.25rem;
+      padding: 1rem 0;
+    }
+    .info-row + .info-row { border-top: 1px solid rgba(17, 17, 17, 0.08); }
+    .info-row dt {
+      flex: 0 0 6.5rem;
+      font-weight: 700;
+    }
+    .info-row dd { margin: 0; }
+    .info-row dd a { font-size: 0.875rem; white-space: nowrap; text-decoration: none; }
+    @media (max-width: 30rem) {
+      .info-row { flex-direction: column; gap: 0.15rem; }
+      .info-row dt { flex: none; }
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+    .site-footer {
+      padding: 1.5rem 0 2rem;
+      background: var(--chrome-bg);
+      color: var(--chrome-ink);
+    }
+    .site-footer p { margin: 0; font-size: 0.85rem; }
+    .site-footer a { text-decoration: underline; text-underline-offset: 0.2em; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="logo" href="index.html">かんたんホームページ工房</a>
+      <nav class="site-nav" aria-label="ページ内">
+        <a href="index.html#about">よくある疑問</a>
+        <a href="index.html#works">できること</a>
+        <a href="index.html#cta">無料で試す</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" aria-label="事業者情報">
+      <div class="shell">
+        <p class="section-label">事業者情報</p>
+        <h1>事業者情報</h1>
+        <p class="section-lead">アーチデザイン工房の事業者情報です。</p>
+        <div class="info-card">
+          <dl class="info-list">
+            <div class="info-row">
+              <dt>屋号</dt>
+              <dd>アーチデザイン工房</dd>
+            </div>
+            <div class="info-row">
+              <dt>運営者</dt>
+              <dd>増渕 敦</dd>
+            </div>
+            <div class="info-row">
+              <dt>所在地</dt>
+              <dd>神奈川県横浜市（詳しい住所は、ご請求があれば遅滞なくお知らせします）</dd>
+            </div>
+            <div class="info-row">
+              <dt>連絡先</dt>
+              <dd><a href="mailto:atsushi.masubuchi.work@gmail.com">atsushi.masubuchi.work@gmail.com</a></dd>
+            </div>
+            <div class="info-row">
+              <dt>事業内容</dt>
+              <dd>ホームページ制作／業務アプリ制作</dd>
+            </div>
+          </dl>
+        </div>
+        <a class="back-link" href="index.html">← トップページへ戻る</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <p>© かんたんホームページ工房</p>
+    </div>
+  </footer>
+</body>
+</html>

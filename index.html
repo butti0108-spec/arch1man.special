@@ -299,6 +299,28 @@
       line-height: 1.5;
       text-underline-offset: 0.2em;
     }
+    .sister-band {
+      padding: clamp(2.5rem, 6vw, 4rem) 0;
+      background: var(--card-bg);
+      color: var(--contact-ink);
+      text-align: center;
+    }
+    .sister-band h2 {
+      margin: 0 0 1rem;
+      font-weight: 700;
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      line-height: 1.35;
+    }
+    .sister-band .section-label { color: var(--contact-ink); }
+    .sister-note { margin: 0; }
+    .sister-link {
+      display: inline-block;
+      margin-top: 1.25rem;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-underline-offset: 0.2em;
+    }
     .site-footer {
       padding: 1.5rem 0 2rem;
       background: var(--chrome-bg);
@@ -448,6 +470,15 @@
     <section class="cta-band" id="cta">
       <div class="shell">
         <a id="cta-link" href="https://butti0108-spec.github.io/kantan-hp-kobo/index.html">まずは無料で、どこまで作れるか試してみてください。</a>
+      </div>
+    </section>
+
+    <section class="sister-band" id="sister">
+      <div class="shell">
+        <p class="section-label">もうひとつの工房</p>
+        <h2>紙やExcelの記録は、専用アプリにできます</h2>
+        <p class="sister-note">同じアーチデザイン工房の「カスタムアプリ工房」では、日々の記録をスマホの専用アプリにする制作も行っております。まずは無料の試作品でお試しいただけます。</p>
+        <a class="sister-link" href="https://appkobo.ai-shin-ka.com/">カスタムアプリ工房を見る →</a>
       </div>
     </section>
   </main>

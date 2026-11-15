@@ -300,10 +300,17 @@
       text-underline-offset: 0.2em;
     }
     .sister-band {
-      padding: clamp(2.5rem, 6vw, 4rem) 0;
-      background: var(--card-bg);
+      padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(2.5rem, 6vw, 4rem);
+      background: var(--page-bg);
       color: var(--contact-ink);
       text-align: center;
+    }
+    .sister-panel {
+      position: relative;
+      background: var(--card-bg);
+      border: 2px solid var(--chrome-bg);
+      border-radius: 1rem;
+      padding: clamp(2rem, 4vw, 2.75rem) clamp(1.25rem, 4vw, 2.5rem) clamp(1.75rem, 4vw, 2.5rem);
     }
     .sister-band h2 {
       margin: 0 0 1rem;
@@ -311,15 +318,30 @@
       font-size: clamp(1.6rem, 3vw, 2.1rem);
       line-height: 1.35;
     }
-    .sister-band .section-label { color: var(--contact-ink); }
+    .sister-band .section-label {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+      padding: 0.35rem 1.2rem;
+      border-radius: 999px;
+      background: var(--chrome-bg);
+      color: #fff;
+      white-space: nowrap;
+    }
     .sister-note { margin: 0; }
+    .nowrap { white-space: nowrap; }
     .sister-link {
       display: inline-block;
       margin-top: 1.25rem;
-      color: var(--accent);
+      padding: 0.75rem 1.75rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
       font-weight: 700;
       font-size: 1.05rem;
-      text-underline-offset: 0.2em;
+      text-decoration: none;
     }
     .site-footer {
       padding: 1.5rem 0 2rem;
@@ -439,7 +461,7 @@
               <img class="work-thumb" src="images/card-02.webp" alt="" width="1672" height="1254">
               <div class="work-item-body">
                 <h3>料金を見る</h3>
-                <p>自分の場合の初期費用と、詳しい料金を確認できます。</p>
+                <p>プランの違いと、詳しい料金を確認できます。</p>
                 <span class="work-more">詳しく見る →</span>
               </div>
             </a>
@@ -475,10 +497,12 @@
 
     <section class="sister-band" id="sister">
       <div class="shell">
-        <p class="section-label">もうひとつの工房</p>
-        <h2>紙やExcelの記録は、専用アプリにできます</h2>
-        <p class="sister-note">同じアーチデザイン工房の「カスタムアプリ工房」では、日々の記録をスマホの専用アプリにする制作も行っております。まずは無料の試作品でお試しいただけます。</p>
-        <a class="sister-link" href="https://appkobo.ai-shin-ka.com/">カスタムアプリ工房を見る →</a>
+        <div class="sister-panel">
+          <p class="section-label">もうひとつの工房</p>
+          <h2>紙やExcelの記録は、<span class="nowrap">専用アプリにできます</span></h2>
+          <p class="sister-note">同じアーチデザイン工房の「カスタムアプリ工房」では、日々の記録をスマホの専用アプリにする制作も行っております。まずは無料の試作品でお試しいただけます。</p>
+          <a class="sister-link" href="https://appkobo.ai-shin-ka.com/">カスタムアプリ工房を見る →</a>
+        </div>
       </div>
     </section>
   </main>
